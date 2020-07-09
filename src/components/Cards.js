@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import axios from 'axios';
 import Linkify from 'react-linkify';
 import './card.css';
@@ -10,8 +10,6 @@ import {
   Col,Row,
   CardTitle,
   CardText,
-  Form,
-
 } from "reactstrap";
 
 
@@ -55,7 +53,7 @@ class Cards extends React.Component {
           </Linkify>
           
           
-          <a href={post.resource} target="_blank">
+          <a href={post.resource} target="_blank" rel="noopener noreferrer">
           <Button color="primary" >
             Go to resource
             </Button>

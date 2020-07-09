@@ -1,17 +1,13 @@
 import React from 'react';
 import axios from 'axios';
 import Checkbox from './Checkbox';
-import checkboxes from './checkboxes';
-import { MDBContainer, MDBAlert } from 'mdbreact';
 import {
     Button, Input, Col,
     Card,
     CardBody,
     Row,
     CardTitle,
-    CardText,
-    Label,
-} from "reactstrap";
+    } from "reactstrap";
 
 class AddPost extends React.Component {
     constructor(props) {
@@ -26,7 +22,7 @@ class AddPost extends React.Component {
           resource: '',
           categories: [],
           category: [],
-          checkedItems: new Map(),
+          
         }
         // this.handleChange=this.handleChange.bind(this);
     

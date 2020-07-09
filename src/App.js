@@ -1,4 +1,4 @@
-import React,{useState, useEffect,DefaultRoute} from 'react';
+import React from 'react';
 import AddPost from './components/AddPost';
 import Cards from './components/Cards';
 //import CardsCategory from './components/Cards-category';
@@ -14,23 +14,14 @@ import Personalization from './components/categoryCards/personalization';
 import Shopping from './components/categoryCards/shopping';
 import Tools from './components/categoryCards/tools';
 import TravelandLocals from './components/categoryCards/travelandlocals';
-
-import { UncontrolledAlert } from 'reactstrap';
 import NavBarPage from './components/NavBarPage';
 import './App.css';
-import {BrowserRouter as Router,Switch,Route,Link, Redirect} from "react-router-dom";
+import {BrowserRouter as Router,Route, Redirect} from "react-router-dom";
 import Linkify from 'react-linkify';
-//import Routes from "./route/Routes";
-// import AuthApi from './utils/AuthApi';
 
 
 const App=() =>{
-  
-  const category='';
-  
-
-
-
+ 
   return (
     
     <Router>
