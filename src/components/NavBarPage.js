@@ -1,0 +1,99 @@
+import React, { Component } from "react";
+import axios from 'axios';
+import {
+  MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse, MDBFormInline,
+  MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem
+} from "mdbreact";
+import { BrowserRouter as Router,Link } from 'react-router-dom';
+
+
+
+class NavBarPage extends Component {
+  state = {
+    isOpen: false,
+    categories:[]
+  };
+
+  toggleCollapse = () => {
+    this.setState({ isOpen: !this.state.isOpen });
+  }
+  getCategory = () => {
+    axios.get('http://localhost:5000/category/')
+        .then((response) => {
+            const data = response.data
+            this.setState({ categories: data });
+            console.log('Data has been Recived !');
+        })
+        .catch((e) => { alert('Error Reciving Data !!', e); });
+  };
+  componentDidMount=()=>{
+    this.getCategory();
+  }
+
+  render() {
+    return (
+      
+        <MDBNavbar color="aqua-gradient" dark expand="md">
+          <Link to="/">
+          <MDBNavbarBrand>
+            <strong className="white-text"><h1>Freesource</h1></strong>
+          </MDBNavbarBrand>
+          </Link>
+          <MDBNavbarToggler onClick={this.toggleCollapse} />
+          <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
+            <MDBNavbarNav left>
+              <MDBNavLink to="/">
+                
+                <MDBNavItem >
+                  Home
+                </MDBNavItem>
+              </MDBNavLink>
+              <MDBNavLink to="/cards">
+                <MDBNavItem>
+                Featured
+                </MDBNavItem>
+              </MDBNavLink>
+              
+              <MDBNavItem>
+                <MDBDropdown>
+                  <MDBDropdownToggle nav caret>
+                    <span className="mr-2">Categories</span>
+                  </MDBDropdownToggle>
+                  <MDBDropdownMenu>
+                    {this.state.categories.map(category => (
+                      <MDBNavLink to={category.pathlist}> <MDBDropdownItem href="#!"><strong >{category.categorylist}</strong></MDBDropdownItem></MDBNavLink>
+
+                    ))}
+                   
+
+                  </MDBDropdownMenu>
+                </MDBDropdown>
+              </MDBNavItem>
+              <MDBNavLink to="/addpost">
+                <MDBNavItem>
+                  <strong ><h5 >Add Your Own</h5></strong>
+                </MDBNavItem>
+              </MDBNavLink>
+            </MDBNavbarNav>
+            <MDBNavbarNav right>
+              {/* <MDBNavItem>
+                <MDBFormInline waves>
+                  <div className="md-form my-0">
+                    <input className="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" />
+                  </div>
+                </MDBFormInline>
+              </MDBNavItem> */}
+              <MDBNavLink to="/addpost">
+                <MDBNavItem>
+                <strong ><h5 >Add Your Own</h5></strong>
+                </MDBNavItem>
+              </MDBNavLink>
+            </MDBNavbarNav>
+          </MDBCollapse>
+        </MDBNavbar>
+      
+    );
+  }
+}
+
+export default NavBarPage;
