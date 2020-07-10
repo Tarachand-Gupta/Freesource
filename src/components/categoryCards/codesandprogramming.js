@@ -22,7 +22,7 @@ class CodesandProgramming extends React.Component {
   };
   //
   getPosts = () => {
-    axios.get('http://localhost:5000/posts/category?category=Codes and Programming')
+    axios.get('https://free-source-api.herokuapp.com/posts/category?category=Codes and Programming')
         .then((response) => {
         const data = response.data
         this.setState({ posts: data });

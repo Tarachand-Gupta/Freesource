@@ -24,7 +24,7 @@ class CardsCategory extends React.Component {
   getPosts = (propcat) => {
     console.log("propcat: ",propcat);
     
-    axios.get('http://localhost:5000/posts/category?category='+propcat)
+    axios.get('https://free-source-api.herokuapp.com/posts/category?category='+propcat)
         .then((response) => {
         const data = response.data;
         this.setState({ posts: data });

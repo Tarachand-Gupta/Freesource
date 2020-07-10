@@ -22,7 +22,7 @@ class BookandRefs extends React.Component {
   };
   //
   getPosts = () => {
-    axios.get('http://localhost:5000/posts/category?category=Book and Reference')
+    axios.get('https://free-source-api.herokuapp.com/posts/category?category=Book and Reference')
         .then((response) => {
         const data = response.data
         this.setState({ posts: data });

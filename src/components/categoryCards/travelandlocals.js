@@ -22,7 +22,7 @@ class TravelandLocals extends React.Component {
   };
   //
   getPosts = () => {
-    axios.get('http://localhost:5000/posts/category?category=Travel and Locals')
+    axios.get('https://free-source-api.herokuapp.com/posts/category?category=Travel and Locals')
         .then((response) => {
         const data = response.data
         this.setState({ posts: data });

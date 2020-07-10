@@ -22,7 +22,7 @@ class Art extends React.Component {
   };
   //
   getPosts = () => {
-    axios.get('http://localhost:5000/posts/category?category=Art')
+    axios.get('https://free-source-api.herokuapp.com/posts/category?category=Art')
         .then((response) => {
         const data = response.data
         this.setState({ posts: data });

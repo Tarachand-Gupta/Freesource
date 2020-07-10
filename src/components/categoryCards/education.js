@@ -22,7 +22,7 @@ class Education extends React.Component {
   };
   //
   getPosts = () => {
-    axios.get('http://localhost:5000/posts/category?category=Education')
+    axios.get('https://free-source-api.herokuapp.com/posts/category?category=Education')
         .then((response) => {
         const data = response.data
         this.setState({ posts: data });

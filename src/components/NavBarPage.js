@@ -18,7 +18,7 @@ class NavBarPage extends Component {
     this.setState({ isOpen: !this.state.isOpen });
   }
   getCategory = () => {
-    axios.get('http://localhost:5000/category/')
+    axios.get('https://free-source-api.herokuapp.com/category/')
         .then((response) => {
             const data = response.data
             this.setState({ categories: data });

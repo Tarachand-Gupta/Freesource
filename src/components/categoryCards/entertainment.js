@@ -22,7 +22,7 @@ class Entertainment extends React.Component {
   };
   //
   getPosts = () => {
-    axios.get('http://localhost:5000/posts/category?category=Entertainment')
+    axios.get('https://free-source-api.herokuapp.com/posts/category?category=Entertainment')
         .then((response) => {
         const data = response.data
         this.setState({ posts: data });

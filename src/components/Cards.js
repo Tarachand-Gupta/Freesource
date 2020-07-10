@@ -25,7 +25,7 @@ class Cards extends React.Component {
   //
   getPosts = () => {
   
-    axios.get('http://localhost:5000/posts/')
+    axios.get('https://free-source-api.herokuapp.com/posts/')
       .then((response) => {
         const data = response.data
         this.setState({ posts: data });

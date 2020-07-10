@@ -32,7 +32,7 @@ class AddPost extends React.Component {
     
 
     getCategory = () => {
-        axios.get('http://localhost:5000/category/')
+        axios.get('https://free-source-api.herokuapp.com/category/')
             .then((response) => {
                 const data = response.data
                 this.setState({ categories: data });
@@ -85,7 +85,7 @@ class AddPost extends React.Component {
         }
 
         axios({
-            url: 'http://localhost:5000/posts/add',
+            url: 'https://free-source-api.herokuapp.com/posts/add',
             method: 'POST',
             data: payload
         })
