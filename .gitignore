@@ -5,6 +5,7 @@
 /backend
 /.pnp
 .pnp.js
+z-options-deployment.txt
 
 # testing
 /coverage
