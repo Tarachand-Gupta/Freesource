@@ -31,9 +31,9 @@ const App=() =>{
             <Redirect to="/home" />
           </Route>
 
-          <Route  path="/">
+          {/* <Route  path="/">
             <Redirect to="/home" />
-          </Route>
+          </Route> */}
 
           <Route  path="/home">
             <Home />
