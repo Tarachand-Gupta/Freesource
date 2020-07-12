@@ -1,7 +1,5 @@
-import React from 'react';
+import React,{Suspense} from 'react';
 import AddPost from './components/AddPost';
-import Cards from './components/Cards';
-//import CardsCategory from './components/Cards-category';
 import AnimeandComics from './components/categoryCards/animeandcomics';
 import Application from './components/categoryCards/application';
 import Art from './components/categoryCards/art';
@@ -17,14 +15,15 @@ import TravelandLocals from './components/categoryCards/travelandlocals';
 import NavBarPage from './components/NavBarPage';
 import './App.css';
 import {BrowserRouter as Router,Route, Redirect} from "react-router-dom";
-import Linkify from 'react-linkify';
+//import Linkify from 'react-linkify';
 
+const Cards =React.lazy(()=>import('./components/Cards') )
 
 const App=() =>{
  
   return (
     
-    <Router>
+    <Router > 
       <NavBarPage />
 
           <Route exact path="/">
@@ -40,7 +39,9 @@ const App=() =>{
           </Route>
 
           <Route exact path="/cards">
-            <Cards />
+            <Suspense fallback={<div>Loading.....</div>}>
+          <Cards />
+            </Suspense>
           </Route>
     
           <Route exact path="/addpost">
@@ -97,15 +98,15 @@ const App=() =>{
       
     </Router>
   );
-}
+};
 
 const Home=()=>(
  
       <div>
-        <h1>This is HOMEPAGE </h1>
-        <Linkify properties={{ target: '_self', style: { color: 'green !important' } }}>
-  See source code at https://github.com/tasti/react-linkify/.
-</Linkify>
+        <h1>Latest : </h1>
+        <Suspense fallback={<div>Loading.....</div>}>
+          <Cards />
+        </Suspense>
       </div> 
 )
 
