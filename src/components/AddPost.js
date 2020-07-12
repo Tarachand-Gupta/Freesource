@@ -62,9 +62,9 @@ class AddPost extends React.Component {
     
 
     submit = (event) => {
-        event.preventDefault();
-        
-        
+    event.preventDefault();
+            
+            
         let checkArray = [];
         this.state.checkedItems.forEach((value, key)=> {
             debugger
@@ -74,10 +74,10 @@ class AddPost extends React.Component {
                 checkArray.push(key);
             }
         });
-        
+            
         console.log("checkArray : ",checkArray );
-        
-       const payload = {
+            
+        const payload = {
             title: this.state.title,
             body: this.state.body,
             resource: this.state.resource,
@@ -88,7 +88,7 @@ class AddPost extends React.Component {
             url: 'https://free-source-api.herokuapp.com/posts/add',
             method: 'POST',
             data: payload
-        })
+            })
             .then(() => {
                 console.log('data has sent to server !');
 
@@ -103,12 +103,9 @@ class AddPost extends React.Component {
             resource:""
 
         });
-        //checkArray=[];
+    };//closes Submit function
 
 
-
-
-    };
     componentDidMount = () => {
         this.getCategory();
     };
@@ -119,13 +116,13 @@ class AddPost extends React.Component {
         return (
             <><form onSubmit={this.submit} >
                 <Row style={{ marginTop: "1rem" }}>
-                    <Col sm={8} lg="10" xl="8" md="10">
+                    <Col sm={12} lg="10" xl="10" md="10">
                         <Card style={{ borderRadius: "5%", marginBottom: "1rem",  marginLeft: "1rem", marginRight: "0.5rem", CaretPosition: "relative" }} >
                             <CardBody>
                                 <CardTitle> <h2>Have a Freesource ? Share with everyone !!</h2></CardTitle>
 
                                 <div className="form-input">
-                                    <Col  sm={8} lg="10" xl="12" md="10">
+                                    <Col >
                                         <Card style={{ borderRadius: "5%", marginBottom: "1rem", marginLeft: "0.5rem", marginRight: "0.5rem", CaretPosition: "relative" }} >
                                             
                                             <Input
@@ -136,7 +133,7 @@ class AddPost extends React.Component {
                                                 value={this.state.title}
                                                 onChange={this.handleChange}
                                                 style={{borderWidth:"2px" ,borderColor:"#36454f"}}
-
+                                                required
                                             />
                                         </Card>
                                         <Card style={{ borderRadius: "5%", marginBottom: "1rem", marginLeft: "0.5rem", marginRight: "0.5rem", CaretPosition: "relative" }} >
@@ -162,24 +159,10 @@ class AddPost extends React.Component {
                                                 style={{borderWidth:"2px" ,borderColor:"#36454f"}}
                                             /></Card>
                                     </Col>
-                                    <Col  sm={8} lg="10" xl="12" md="10">
+                                    <Col  >
                                         <Card style={{ borderRadius: "5%", marginBottom: "1rem", marginLeft: "0.5rem", marginRight: "0.5rem", CaretPosition: "relative" }} >
                                             <CardBody>
-                                                {/* {this.state.categories.map(category => (
-                                                    <div class="custom-control custom-checkbox custom-control-inline">
-                                                        
-                                                        < input type="checkbox" class="custom-control-input"
-                                                            
-                                                            name={category.categorylist} 
-                                                            value={category.categorylist}
-                                                            
-                                                            onChange={this.onChangeCheckbox} />
-
-                                                        <label class="custom-control-label"
-                                                            for={category.categorylist}>{category.categorylist}</label>
-                                                    </div>
-                                                ))} */}
-                                            <CardTitle> <h4>Select categories </h4></CardTitle>
+                                                                                            <CardTitle> <h4>Select categories </h4></CardTitle>
                                         {this.state.categories.map(category => (
                                             
                                             <label >&nbsp;&nbsp;
@@ -197,9 +180,7 @@ class AddPost extends React.Component {
                                     </Col>
                                 </div>
                                 <Button style={{ marginLeft: "2rem" }} color="primary" size="lg">Submit</Button>
-                                
-                                     
-                                
+
                                 <h5 style={{ textAlign: "center" }}>{this.state.status}</h5>
 
                             </CardBody>

@@ -20,7 +20,6 @@ class Cards extends React.Component {
   state = {
     posts: [],
     category: (''),
-    url: "https://github.com",
   skeletonArray : [1, 2, 3, 4, 5]
 
   };
@@ -48,11 +47,12 @@ class Cards extends React.Component {
         <Row style={{ marginTop: "1rem" }}>
           {
             this.state.posts.map(post =>
-              (<Col lg="4" xl="3" md="6">
+              (<Col lg="4" xl="3" md="6" sm="6">
                 <Card style={{ borderRadius: "5%", marginBottom: "1rem", marginLeft: "0.5rem", marginRight: "0.5rem", CaretPosition: "relative" }} >
                   <CardBody>
                     <CardTitle class="CardTitle" ><h4 class="h1-responsive" className="display-4">{post.title}</h4></CardTitle>
-                    <Linkify target="_blank" ><CardText>
+                    <Linkify target="_blank" >
+                      <CardText>
                       {post.body}
                     </CardText>
 

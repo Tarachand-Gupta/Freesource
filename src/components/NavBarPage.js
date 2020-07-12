@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import axios from 'axios';
 import {
   MDBNavbar, MDBNavbarBrand, MDBNavbarNav, MDBNavItem, MDBNavLink, MDBNavbarToggler, MDBCollapse,
-  MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem
+  MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem,
 } from "mdbreact";
-import { BrowserRouter as Link } from 'react-router-dom';
+//import { BrowserRouter as Link } from 'react-router-dom';
 
 
 
@@ -34,11 +34,11 @@ class NavBarPage extends Component {
     return (
       
         <MDBNavbar color="aqua-gradient" dark expand="md">
-          <Link to="/">
-          <MDBNavbarBrand>
-            <strong className="white-text"><h1>Freesource</h1></strong>
+         <MDBNavLink to="/home">
+          <MDBNavbarBrand> 
+            <strong className="white-text"><h3>Freesource</h3></strong>
           </MDBNavbarBrand>
-          </Link>
+          </MDBNavLink>
           <MDBNavbarToggler onClick={this.toggleCollapse} />
           <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
             <MDBNavbarNav left>
@@ -83,9 +83,9 @@ class NavBarPage extends Component {
                   </div>
                 </MDBFormInline>
               </MDBNavItem> */}
-              <MDBNavLink to="/addpost">
+              <MDBNavLink to="/aboutus">
                 <MDBNavItem>
-                <strong ><h5 >Add Your Own</h5></strong>
+                <h6 >About Us and Legals</h6>
                 </MDBNavItem>
               </MDBNavLink>
             </MDBNavbarNav>
