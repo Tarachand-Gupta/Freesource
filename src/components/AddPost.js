@@ -129,7 +129,7 @@ class AddPost extends React.Component {
                                         <Card style={{ borderRadius: "5%", marginBottom: "1rem", marginLeft: "0.5rem", marginRight: "0.5rem", CaretPosition: "relative" }} >
                                             
                                             <Input
-                                                maxLength="30"
+                                                maxLength="60"
                                                 type="text"
                                                 name="title"
                                                 placeholder="Title"
