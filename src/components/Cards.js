@@ -18,10 +18,8 @@ import {
 class Cards extends React.Component {
 
   state = {
-    posts: [],
-    category: (''),
-  skeletonArray : [1, 2, 3, 4, 5]
-
+    posts: [1,2,3,4,5,6,7,8,9,10,11,12],
+    
   };
 
   //
@@ -42,65 +40,34 @@ class Cards extends React.Component {
 
 
   render() {
-    if (this.state.posts.length > 0) {
+    
       return (
-        <Row style={{ marginTop: "1rem" }}>
-          {
-            this.state.posts.map(post =>
-              (<Col lg="4" xl="3" md="6" sm="6">
-                <Card style={{ borderRadius: "5%", marginBottom: "1rem", marginLeft: "0.5rem", marginRight: "0.5rem", CaretPosition: "relative" }} >
-                  <CardBody>
-                    <CardTitle class="CardTitle" ><h4 class="h1-responsive" className="display-4">{post.title}</h4></CardTitle>
-                    <Linkify target="_blank" >
-                      <CardText>
-                      {post.body}
-                    </CardText>
-
-                    </Linkify>
-
-
-                    <a href={post.resource} target="_blank" rel="noopener noreferrer">
-                      <Button color="primary" >
-                        Go to resource
+        <Row style={{marginTop:"1rem"}}>
+        {this.state.posts.map(post=>(  <Col lg="4" xl="3" md="6">
+        <Card style={{ borderRadius: "5%", marginBottom: "1rem" ,marginLeft:"0.5rem" ,marginRight:"0.5rem" ,CaretPosition:"relative"}} > 
+        <CardBody>
+          <CardTitle class="CardTitle" ><h4 class="h1-responsive" className="display-4">{post.title||<Skeleton />}</h4></CardTitle>
+          <Linkify target="_blank" ><CardText>
+          {post.body||<Skeleton />}
+          </CardText>
+          
+          </Linkify>
+          
+          
+          <a href={post.resource||<Skeleton />} target="_blank" rel="noopener noreferrer">
+          <Button color="primary" >
+            Go to resource
             </Button>
-
-                    </a>
-                  </CardBody>
-                </Card>
-              </Col>
-              ))
-          }
-        </Row>
+          
+        </a>
+        </CardBody>
+      </Card>
+      </Col>
+      ))}
+      </Row>
       );
-    }
-    else {
-      return (
-        <Row style={{ marginTop: "1rem" }}>
-          {(
-            this.state.skeletonArray.map(dgs =>
-              <Col lg="4" xl="3" md="6">
-                <Card style={{ borderRadius: "5%", marginBottom: "1rem", marginLeft: "0.5rem", marginRight: "0.5rem", CaretPosition: "relative" }} >
-                  <CardBody>
-                    <CardTitle class="CardTitle" >
-                      <h4 class="h1-responsive" className="display-4">
-                        <Skeleton />
-                      </h4>
-                    </CardTitle>
-                    <CardText>
-                      <Skeleton />
-                    </CardText>
-                    <Skeleton />
-                    <Skeleton />
-
-
-                  </CardBody>
-                </Card>
-              </Col>
-            )
-          )}
-        </Row>
-      )
-    }
+    
+    
   }
 }
 

@@ -132,7 +132,7 @@ class AddPost extends React.Component {
                                                 placeholder="Title"
                                                 value={this.state.title}
                                                 onChange={this.handleChange}
-                                                style={{borderWidth:"2px" ,borderColor:"#36454f"}}
+                                                style={{borderWidth:"1px" ,borderColor:"#36454f"}}
                                                 required
                                             />
                                         </Card>
@@ -142,10 +142,11 @@ class AddPost extends React.Component {
                                                 type="text"
                                                 name="resource"
                                                 pattern="https://.*"
+                                                oninvalid="this.setCustomValidity('Please add https:// before the link ')"
                                                 placeholder="Resource Link (Shuld start from https://) "
                                                 value={this.state.resource}
                                                 onChange={this.handleChange}
-                                                style={{borderWidth:"2px" ,borderColor:"#36454f"}}
+                                                style={{borderWidth:"1px" ,borderColor:"#36454f"}}
                                             />
                                         </Card>
                                         <Card style={{ borderRadius: "5%", marginBottom: "1rem", marginLeft: "0.5rem", marginRight: "0.5rem", CaretPosition: "relative" }} >
@@ -156,7 +157,7 @@ class AddPost extends React.Component {
                                                 placeholder="Enter your Freesource discription here .."
                                                 value={this.state.body}
                                                 onChange={this.handleChange}
-                                                style={{borderWidth:"2px" ,borderColor:"#36454f"}}
+                                                style={{borderWidth:"1px" ,borderColor:"#36454f"}}
                                             /></Card>
                                     </Col>
                                     <Col  >

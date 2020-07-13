@@ -36,7 +36,7 @@ class NavBarPage extends Component {
         <MDBNavbar color="aqua-gradient" dark expand="md">
          <MDBNavLink to="/home">
           <MDBNavbarBrand> 
-            <strong className="white-text"><h3>Freesource</h3></strong>
+            <strong className="white-text"><h1>Freesource</h1></strong>
           </MDBNavbarBrand>
           </MDBNavLink>
           <MDBNavbarToggler onClick={this.toggleCollapse} />
@@ -45,20 +45,21 @@ class NavBarPage extends Component {
               <MDBNavLink to="/">
                 
                 <MDBNavItem >
-                  Home
+                <strong ><h5 >Home</h5></strong>
                 </MDBNavItem>
               </MDBNavLink>
               <MDBNavLink to="/cards">
                 <MDBNavItem>
-                Featured
+                <strong ><h5 >Featured</h5></strong>
                 </MDBNavItem>
               </MDBNavLink>
               
               <MDBNavItem>
                 <MDBDropdown>
+                <strong ><h5 >
                   <MDBDropdownToggle nav caret>
                     <span className="mr-2">Categories</span>
-                  </MDBDropdownToggle>
+                  </MDBDropdownToggle></h5></strong>
                   <MDBDropdownMenu>
                     {this.state.categories.map(category => (
                       <MDBNavLink to={category.pathlist}> <MDBDropdownItem href="#!"><strong >{category.categorylist}</strong></MDBDropdownItem></MDBNavLink>
