@@ -7,6 +7,7 @@ import {
     CardBody,
     Row,
     CardTitle,
+    
     } from "reactstrap";
 
 class AddPost extends React.Component {
@@ -22,6 +23,7 @@ class AddPost extends React.Component {
           resource: '',
           categories: [],
           category: [],
+          username:'',
           
         }
         // this.handleChange=this.handleChange.bind(this);
@@ -81,7 +83,8 @@ class AddPost extends React.Component {
             title: this.state.title,
             body: this.state.body,
             resource: this.state.resource,
-            category: checkArray
+            category: checkArray,
+            username:this.state.username
         }
 
         axios({
@@ -136,6 +139,7 @@ class AddPost extends React.Component {
                                                 required
                                             />
                                         </Card>
+                                       
                                         <Card style={{ borderRadius: "5%", marginBottom: "1rem", marginLeft: "0.5rem", marginRight: "0.5rem", CaretPosition: "relative" }} >
                                             <Input
                                                 maxLength="200"
@@ -179,9 +183,32 @@ class AddPost extends React.Component {
                                             </CardBody>
                                         </Card>
                                     </Col>
-                                </div>
-                                <Button style={{ marginLeft: "2rem" }} color="primary" size="lg">Submit</Button>
+                                    <Col>
+                                    <Card style={{ borderRadius: "5%", marginBottom: "1rem", marginLeft: "0.5rem", marginRight: "0.5rem", CaretPosition: "relative" }} >       
+                                         
+                                        <Input
+                                            maxLength="30"
+                                            type="text"
+                                            name="username"
+                                            placeholder="Pick a Username"
+                                            value={this.state.username}
+                                            onChange={this.handleChange}
+                                            style={{borderWidth:"1px" ,borderColor:"#36454f"}}
+                                            required
+                                        />
+                                    </Card>
+                                    </Col>
+                                    
+                                    
+                                    
+                                    
+                                    <Button style={{ marginLeft: "2rem" }} color="primary" size="lg">Submit</Button>
+                                    
+                                    
 
+                                </div>
+                                
+                                
                                 <h5 style={{ textAlign: "center" }}>{this.state.status}</h5>
 
                             </CardBody>
