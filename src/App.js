@@ -130,7 +130,7 @@ const AboutUs=()=>(
         <h2>Freesource - Know, how free the Internet is ! </h2>
       </CardTitle>
       <CardText>
-       <h6> I am Tarachand Gupta an Enginnering Geek , and crated this <strong>Platform</strong>  to <strong>share</strong> your favorite <strong>resources with Everyone !</strong></h6>
+       <h6> I am Tarachand Gupta an Enginnering Geek, and created this <strong>Platform</strong>  to <strong>share</strong> your favorite <strong>resources with Everyone !</strong></h6>
       </CardText>
       <CardText>
 
