@@ -24,8 +24,11 @@ class Cards extends React.Component {
 
   //
   getPosts = () => {
-
-    axios.get('https://free-source-api.herokuapp.com/posts/')
+    
+    axios.get('https://cors-anywhere-herokuapp.com/https://free-source-api.herokuapp.com/posts/',{
+        headers: {
+          'Access-Control-Allow-Origin' : '*',
+        }})
       .then((response) => {
         const data = response.data
         this.setState({ posts: data });
